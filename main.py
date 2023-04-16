@@ -26,7 +26,7 @@ def get_search_results(prompts):
 
     results_wrapper = driver.find_element(By.CSS_SELECTOR, "#search")
     results = results_wrapper.find_elements(By.TAG_NAME, "h3")
-    for i, result in enumerate(results[:5], 1):
+    for result in results[:5]:
         title = result.get_attribute('innerHTML')
         url = result.find_element(By.XPATH, "..").get_attribute('href')
         if url:
