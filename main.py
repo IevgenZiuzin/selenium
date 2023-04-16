@@ -6,12 +6,13 @@ URL = 'https://www.google.com/'
 PREfIX = 'search?q='
 
 
-driver = webdriver.Edge()
-
-
 def get_search_results(prompts):
     suffix = '+'.join(prompts)
     search_query = URL + PREfIX + suffix
+    try:
+        driver = webdriver.Chrome()
+    except:
+        driver = webdriver.Safari()
 
     try:
         driver.get(URL)
