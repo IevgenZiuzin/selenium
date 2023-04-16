@@ -22,6 +22,7 @@ def get_search_results(prompts):
         elem.click()
     except:
         driver.get(search_query)
+
     driver.implicitly_wait(5)
 
     results_wrapper = driver.find_element(By.CSS_SELECTOR, "#search")
